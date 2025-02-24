@@ -1,0 +1,21 @@
+extends ../common/layout
+
+block layout-content
+    section.admin-dashboard.text-center.py-5.bg-dark.text-white
+        .container
+            h1.display-4 Welcome, #{username}!
+            p.lead Manage your projects and experiences easily from here.
+
+            .row.justify-content-center.mt-4
+                .col-md-4.col-6.mb-3
+                    .card.shadow-lg.border-0.custom-card
+                        .card-body
+                            h3.card-title.text-primary My Projects
+                            p.card-text View and manage all your projects.
+                            a.btn.btn-outline-primary(href="/projects/list") Go to Projects
+                .col-md-4.col-6.mb-3
+                    .card.shadow-lg.border-0.custom-card
+                        .card-body
+                            h3.card-title.text-success My Experiences
+                            p.card-text Update and organize your professional experiences.
+                            a.btn.btn-outline-success(href="/experiences/list") Go to Experiences

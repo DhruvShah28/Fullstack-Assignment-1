@@ -1,0 +1,18 @@
+extends ../common/layout
+
+block layout-content
+    .d-flex.justify-content-center.align-items-center
+        .card.shadow-lg.p-4.mt-5
+            .card-body
+                h1.text-center.mb-4 Register  
+                form(action="/admin/register", method="POST")
+                    .mb-3
+                        label.form-label(for="user") Username:
+                        input.form-control(type="text", id="user", name="user", required)
+                    .mb-3
+                        label.form-label(for="pass") Password: 
+                        input.form-control(type="password", id="pass", name="pass", required) 
+                    .d-grid
+                        button.btn.btn-success(type="submit") Register
+                p.text-center.mt-3 
+                    | Already have an account? #[a(href="/admin/login" class="text-decoration-none") Login]  

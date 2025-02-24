@@ -1,0 +1,206 @@
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main{
+    background-color: #ddd;
+    flex: 1;
+}
+
+/* Navbar custom styles */
+.navbar {
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Brand name styles */
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #0056b3 !important;
+}
+
+
+.mynav {
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+
+.mynav:hover, .mynav.active {
+    color: #007bff !important;
+}
+
+.mynav::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}   
+
+.card {
+    border-radius: 10px;
+    background: #fff;
+}
+
+button.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: 0.3s;
+}
+
+button.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.custom-card {
+    transition: transform 0.3s ease-in-out;
+}
+.custom-card:hover {
+    transform: scale(1.05);
+}
+
+
+.exp-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.exp-list {
+    list-style: none;
+    padding: 0;
+}
+
+.exp-item {
+    padding: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.exp-item:last-child {
+    border-bottom: none;
+}
+
+.exp-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.exp-company {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.exp-meta {
+    font-size: 1rem;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.exp-description {
+    font-size: 1rem;
+    color: #212529;
+    margin-bottom: 1rem;
+}
+
+.exp-delete-btn {
+    background: #dc3545;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.exp-delete-btn:hover {
+    background: #b02a37;
+}
+
+.exp-add-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.exp-add-btn:hover {
+    background: #0056b3;
+}
+
+.proj-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1.text-center {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #343a40;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #495057;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button.proj-submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.proj-submit-btn:hover {
+    background: #0056b3;
+}

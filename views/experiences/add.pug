@@ -1,0 +1,25 @@
+extends ../common/layout
+
+block layout-content
+    .proj-container
+        h2.text-center Add Your Experience
+        form(action="/experiences/add/submit", method="POST")
+            .form-group
+                label(for="title") Title:
+                input(type="text", name="title", id="title", placeholder="Your Role")
+            .form-group
+                label(for="company") Company:
+                input(type="text", name="company", id="company", placeholder="Your Company Name")
+            .form-group
+                label(for="location") Location:
+                input(type="text", name="location", id="location", placeholder="Company Location")
+            .form-group
+                label(for="startyear") Starting Year:
+                input(type="number", name="startyear", id="startyear", placeholder="Starting Year")
+            .form-group
+                label(for="endyear") Ending Year:
+                input(type="number", name="endyear", id="endyear", placeholder="Ending Year")
+            .form-group
+                label(for="desc") Description:
+                textarea(name="desc", id="desc", placeholder="Description", rows="4")
+            button.proj-submit-btn(type="submit") Add Experience

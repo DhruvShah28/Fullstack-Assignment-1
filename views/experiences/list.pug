@@ -1,0 +1,17 @@
+extends ../common/layout
+
+block layout-content
+    .exp-container
+        h1.text-center My Experience
+        ul.exp-list
+            each item in experience
+                li.exp-item
+                    h2.exp-title= item.title
+                    h3.exp-company= item.company  
+                    p.exp-meta #{item.startYear} - #{item.endYear}
+                    p.exp-meta Location: #{item.location}
+                    p.exp-description= item.description  
+                    form(action="/experiences/delete/submit")
+                        input(type="hidden", name="linkid", value=item._id)
+                        button.exp-delete-btn(type="submit") Delete
+        a.exp-add-btn(href="/experiences/add") Add a new Experience

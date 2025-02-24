@@ -1,0 +1,17 @@
+extends ../common/layout
+
+block layout-content
+    .exp-container
+        h1.text-center My Projects
+        ul.exp-list
+            each item in project
+                li.exp-item
+                    h2.exp-title= item.name
+                    p.exp-summary= item.summary
+                    p.exp-tech= item.technology
+                    p.exp-status= item.status
+                    p.exp-timespan= item.timespan
+                    form(action="/projects/delete/submit")
+                        input(type="hidden", name="proid", value=item._id)
+                        button.exp-delete-btn(type="submit") Delete
+        a.exp-add-btn(href="/projects/add") Add a new Project

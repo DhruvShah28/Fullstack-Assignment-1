@@ -1,0 +1,22 @@
+extends ../common/layout
+
+block layout-content
+    .proj-container
+        h1.text-center Add New Project
+        form(action="/projects/add/submit", method="POST")
+            .form-group
+                label(for="name") Project Name:
+                input(type="text", id="name", name="name")
+            .form-group
+                label(for="summary") Project Summary:
+                textarea(id="summary", name="summary", rows="4", placeholder="Description")
+            .form-group
+                label(for="technology") Technology:
+                input(type="text", id="technology", name="technology", placeholder="HTML, CSS, JavaScript")
+            .form-group
+                label(for="status") Status:
+                input(type="text", id="status", name="status", placeholder="Completed?")
+            .form-group
+                label(for="timespan") Time Span:
+                input(type="text", id="timespan", name="timespan", placeholder="1 Month")
+            button.proj-submit-btn(type="submit") Add Project
