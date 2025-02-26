@@ -1,12 +1,16 @@
 const projectModel = require("./model");
 
 const showallproject = async (request, response) => {
-    let projectList = await projectModel.getProject();
+    if(request.session.loggedIn){
+        let projectList = await projectModel.getProject();
     if(!projectList.length){
         await projectModel.initializeProject();
         projectList = await projectModel.getProject();
     }
     response.render("projects/list",{project: projectList});
+    }else{
+        response.redirect("/admin/login");
+    }
 }
 
 const showapiproject = async (request, response) => {
@@ -15,7 +19,11 @@ const showapiproject = async (request, response) => {
 }
 
 const showadd = async(request, response) => {
-    response.render("projects/add");
+    if(request.session.loggedIn){
+        response.render("projects/add");
+    }else{
+        response.redirect("/admin/login");
+    }
 }
 
 const addNewProject = async(request, response) => {

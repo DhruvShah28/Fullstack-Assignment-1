@@ -2,12 +2,16 @@ const { response } = require("express");
 const experienceModel = require("./model");
 
 const showallexperience = async (request, response) => {
-    let experienceList = await experienceModel.getExperience();
+    if(request.session.loggedIn){
+        let experienceList = await experienceModel.getExperience();
     if(!experienceList.length){
         await experienceModel.initializeExperience();
         experienceList = await experienceModel.getExperience();
     }
     response.render("experiences/list", { experience: experienceList });
+    }else{
+        response.redirect("/admin/login");
+    }
 };
 
 const showapiexperience = async (request, response) =>{
@@ -16,7 +20,11 @@ const showapiexperience = async (request, response) =>{
 }
 
 const showadd = async (request, response) => {
-    response.render("experiences/add");
+    if(request.session.loggedIn){
+        response.render("experiences/add");
+    }else{
+        response.redirect("/admin/login");
+    }
 }
 
 const addNewExperience = async (request, response) => {

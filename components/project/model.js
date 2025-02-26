@@ -40,7 +40,7 @@ async function addProject(newname, newsummary, newtechnology, newstatus, newtime
         name: newname,
         summary: newsummary,
         technology: newtechnology,
-        status: newtechnology,
+        status: newstatus,
         timespan: newtimespan
     });
     let result = await newProject.save();
