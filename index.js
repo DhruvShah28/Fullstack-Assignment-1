@@ -3,6 +3,9 @@ const path = require("path");
 const sessions = require("express-session");
 const dotenv = require("dotenv");
 
+const cors = require("cors");
+
+
 //used to load the environment variable stored in .env loacl file
 dotenv.config();
 
@@ -10,7 +13,23 @@ dotenv.config();
 // (using it as json object to use express methods) and defining port to default or 8888
 const app = express();
 const port = process.env.PORT || '8888';
-
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://fullstack-assignment-3.vercel.app",
+    "https://fullstack-assignment-1-rms7.onrender.com"
+  ];
+  
+  app.use(cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true
+  }));
+    
 // setting up the path location for views to our template engine folder path (i.e. views)
 app.set("views", path.join(__dirname,"views"));
 // definging which template engine we are using for this app (i.e. pug)
